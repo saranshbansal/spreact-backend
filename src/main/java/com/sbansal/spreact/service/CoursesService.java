@@ -2,7 +2,6 @@ package com.sbansal.spreact.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
@@ -71,7 +70,7 @@ public class CoursesService
         return courses
             .stream()
             // specify the no. of elements the stream 
-            // that should be limited 
-            .limit(endIndex - startIndex + 1).collect(Collectors.toList());
+            // that should be limited
+            .limit(endIndex).collect(Collectors.toList());
     }
 }
