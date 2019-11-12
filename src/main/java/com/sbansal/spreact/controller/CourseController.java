@@ -27,7 +27,7 @@ public class CourseController
 
 
     @GetMapping("/instructors/{username}/courses")
-    public List<Course> getAllCourses(@PathVariable String username, @RequestParam(required=false) int offset, @RequestParam(required=false) int count)
+    public List<Course> getAllCourses(@PathVariable String username, @RequestParam(required=false) Integer offset, @RequestParam(required=false) Integer count)
     {
         return courseManagementService.find(username, offset, count);
     }

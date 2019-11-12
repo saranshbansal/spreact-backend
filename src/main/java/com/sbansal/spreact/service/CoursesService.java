@@ -54,10 +54,10 @@ public class CoursesService
     }
 
 
-    public List<Course> find(String username, int offset, int count)
+    public List<Course> find(String username, Integer offset, Integer count)
     {
-        if (offset == 0)
-            return courses.stream().filter(obj -> obj.getUsername().equals(username)).limit(count).collect(Collectors.toList());
+        if (offset == null || offset == 0)
+            return courses.stream().filter(obj -> obj.getUsername().equals(username)).collect(Collectors.toList());
 
         int startIdx = 0;
         int endIdx = count * offset + count;
